@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 import { environment } from '../environments/environment';
+import { userReducer } from '@reducers/user.reducer';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { environment } from '../environments/environment';
     HttpLinkModule,
     ApolloModule,
     StoreModule.forRoot({
-      apollo: apolloReducer
+      apollo: apolloReducer,
+      users: userReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
